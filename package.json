@@ -1,0 +1,54 @@
+{
+  "name": "ad-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Iarlen Aquiles <iarlensilva775@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=production node src/server.js",
+    "start:local": "NODE_ENV=development nodemon src/server.js",
+    "dev": "NODE_ENV=development nodemon src/server.js",
+    "lint": "eslint --fix --cache src",
+    "compile:gulp": "gulp generate_pages",
+    "run:gulp": "cd build && browser-sync start --server --directory"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix src"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint --fix --cache src",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "dependencies": {
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "helmet": "^4.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "gulp": "^4.0.2",
+    "gulp-markdown": "^5.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.0.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
