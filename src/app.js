@@ -1,8 +1,17 @@
-const express = require('express');
-const helmet = require('helmet');
+const gulp = require('gulp');
+const markdown = require('gulp-markdown');
 
-const app = express();
+const adDocs = (done) => {
+  gulp.src('**/*.md')
+    .pipe(markdown())
+    .pipe(gulp.dest('./dist')
+      .on('end', () => {
+        if (done) {
+          done();
+        }
+      }));
+};
 
-app.use(helmet());
-
-module.exports = app;
+adDocs(() => {
+  console.log('Done!');
+});
