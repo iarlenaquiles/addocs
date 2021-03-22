@@ -1,17 +1,13 @@
 const gulp = require('gulp');
 const markdown = require('gulp-markdown');
+const npm = require('npm');
 
-const adDocs = (done) => {
+exports.compile = () => {
   gulp.src('**/*.md')
     .pipe(markdown())
-    .pipe(gulp.dest('./dist')
-      .on('end', () => {
-        if (done) {
-          done();
-        }
-      }));
+    .pipe(gulp.dest('./dist'));
 };
 
-adDocs(() => {
-  console.log('Done!');
-});
+exports.run = () => {
+  npm.load(() => npm.commands.run(['run:gulp']));
+};

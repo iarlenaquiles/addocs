@@ -10,7 +10,7 @@
     "dev": "NODE_ENV=development nodemon src/server.js",
     "lint": "eslint --fix --cache src",
     "compile:gulp": "gulp generate_pages",
-    "run:gulp": "cd build && browser-sync start --server --directory"
+    "run:gulp": "cd dist && rm -rf node_modules && browser-sync start --server --directory"
   },
   "lint-staged": {
     "*.js": [
@@ -24,15 +24,17 @@
     }
   },
   "dependencies": {
+    "browser-sync": "^2.26.14",
+    "commander": "^7.2.0",
     "config": "^3.3.2",
     "express": "^4.17.1",
-    "helmet": "^4.1.0",
-    "path": "^0.12.7" , 
     "gulp": "^4.0.2",
     "gulp-markdown": "^5.1.0",
-    "browser-sync": "^2.26.14"
+    "helmet": "^4.1.0",
+    "npm": "^7.6.3",
+    "path": "^0.12.7"
   },
-  "devDependencies": {   
+  "devDependencies": {
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.19.0",
@@ -40,7 +42,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.1.4", 
+    "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "nodemon": "^2.0.7",
