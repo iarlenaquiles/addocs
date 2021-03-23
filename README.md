@@ -2,13 +2,12 @@
 
 ## How to Install
 
-run `yarn add https://code.aquilinedrones.com/tpp/ad-docs` or
-`npm install --save https://code.aquilinedrones.com/tpp/ad-docs`
+run `npx ad-docs`
 
 ## How to compile the markdowns files?
 
-run `addocs`
+run `npx ad-docs`
 
 ## How to view the html files?
 
-run `addocs run`
+run `npx ad-docs run`
