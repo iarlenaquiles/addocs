@@ -1,7 +1,7 @@
 {
   "name": "ad-docs",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "bin/cli.js",
   "author": "Iarlen Aquiles <iarlensilva775@gmail.com>",
   "license": "MIT",
   "bin": {
